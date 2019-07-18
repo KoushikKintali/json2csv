@@ -13,7 +13,8 @@ export class ConvertController {
     //payment.status = "success";
     //console.log(payment)
     //convert2csv(json2csv)
-    console.log(convert2csv(json2csv))
+    //console.log(convert2csv(json2csv))
+    return convert2csv(json2csv)
   }
 
 }
