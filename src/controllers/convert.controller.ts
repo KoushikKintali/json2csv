@@ -19,16 +19,26 @@ export class ConvertController {
 
 }
 var str:any="";
+var str1:any="";
+var str2:any="";
+
 function convert2csv(json2csvobj : any){  
 
   for(var a in json2csvobj){
+    console.log(a)
+    
     if(typeof json2csvobj[a] == "object"){
+      str2+=a+"_"
+      
       convert2csv(json2csvobj[a])
+      
     }
     else{
+      str1=str1+str2+a+","
+      console.log(str1);
       str+=json2csvobj[a]+","
     }
   }
   
-  return str;
+  return {"headers":str1,"values":str};
 }
